@@ -54,7 +54,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginBottom="20dp"
         android:layout_marginRight="24dp"
-        android:src="@drawable/location_library"
+        android:src="@drawable/location_map"
         android:textSize="15sp" />
 
     <ImageButton
@@ -66,7 +66,7 @@
         android:layout_marginRight="24dp"
         android:layout_marginTop="10dp"
         android:contentDescription="@string/picture"
-        android:src="@drawable/important"
+        android:src="@drawable/rating_important"
         android:textSize="15sp" />
 
     <TextView

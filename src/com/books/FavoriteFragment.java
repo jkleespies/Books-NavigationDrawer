@@ -48,6 +48,7 @@ public class FavoriteFragment extends ListFragment {
 	private File path;
 	private File file;
 	private Bitmap bitmap;
+//	private String[] navMenuTitles;
 
 	public FavoriteFragment() {
 	}
@@ -78,9 +79,9 @@ public class FavoriteFragment extends ListFragment {
 				FragmentManager fragmentManager = getFragmentManager();
 				fragmentManager.beginTransaction()
 						.replace(R.id.frame_container, fragment).commit();
-				String[] navMenuTitles;
-				navMenuTitles = getResources().getStringArray(
-						R.array.navigation_drawer_array);
+
+//				navMenuTitles = getResources().getStringArray(
+//						R.array.navigation_drawer_array);
 			}
 		});
 
@@ -94,9 +95,8 @@ public class FavoriteFragment extends ListFragment {
 				FragmentManager fragmentManager = getFragmentManager();
 				fragmentManager.beginTransaction()
 						.replace(R.id.frame_container, fragment).commit();
-				String[] navMenuTitles;
-				navMenuTitles = getResources().getStringArray(
-						R.array.navigation_drawer_array);
+//				navMenuTitles = getResources().getStringArray(
+//						R.array.navigation_drawer_array);
 
 			}
 		});

@@ -43,8 +43,8 @@ public class MainActivity extends Activity {
 	// private ArrayList<NavDrawerItem> navDrawerItems;
 	private ArrayList<NavDrawerItem> navDrawerItems;
 	private NavDrawerListAdapter adapter;
-	
-//	handle Map 
+
+	// handle Map
 	protected static Integer displayViewNumber = 0;
 
 	@Override
@@ -55,10 +55,12 @@ public class MainActivity extends Activity {
 		mTitle = mDrawerTitle = getTitle();
 
 		// load slide menu items
-		navMenuTitles = getResources().getStringArray(R.array.navigation_drawer_array);
+		navMenuTitles = getResources().getStringArray(
+				R.array.navigation_drawer_array);
 
 		// nav drawer icons from resources
-		navMenuIcons = getResources().obtainTypedArray(R.array.navigation_drawer_icons);
+		navMenuIcons = getResources().obtainTypedArray(
+				R.array.navigation_drawer_icons);
 
 		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 		mDrawerList = (ListView) findViewById(R.id.list_slidermenu);
@@ -86,7 +88,7 @@ public class MainActivity extends Activity {
 				navDrawerItems);
 		// setting Change List Fragment
 		mDrawerList.setAdapter(adapter);
-		
+
 		// enabling action bar app icon and behaving it as toggle button
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		getActionBar().setHomeButtonEnabled(true);
@@ -111,15 +113,12 @@ public class MainActivity extends Activity {
 			}
 		};
 		mDrawerLayout.setDrawerListener(mDrawerToggle);
-		if (savedInstanceState == null && displayViewNumber ==0) {
+		if (savedInstanceState == null && displayViewNumber == 0) {
 			// on first time display view for first nav item
 			displayView(0);
 			Log.d("if onCreate", "displayView");
 		}
-//		if (displayViewNumber ==1){
-//			displayView(1);
-//		}
-		
+
 	}
 
 	// Slide menu item click listener
@@ -142,7 +141,7 @@ public class MainActivity extends Activity {
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		// toggle nav drawer on selecting action bar app icon/title 
+		// toggle nav drawer on selecting action bar app icon/title
 		// Drawer
 		if (mDrawerToggle.onOptionsItemSelected(item)) {
 
@@ -158,13 +157,13 @@ public class MainActivity extends Activity {
 	}
 
 	// // Called when invalidateOptionsMenu() is used
-	 @Override
-	 public boolean onPrepareOptionsMenu(Menu menu) {
-	 // if nav drawer is opened, hide the action items
-	 boolean drawerOpen = mDrawerLayout.isDrawerOpen(mDrawerList);
-	 menu.findItem(R.id.action_settings).setVisible(!drawerOpen);
-	 return super.onPrepareOptionsMenu(menu);
-	 }
+	@Override
+	public boolean onPrepareOptionsMenu(Menu menu) {
+		// if nav drawer is opened, hide the action items
+		boolean drawerOpen = mDrawerLayout.isDrawerOpen(mDrawerList);
+		menu.findItem(R.id.action_settings).setVisible(!drawerOpen);
+		return super.onPrepareOptionsMenu(menu);
+	}
 
 	// displaying different fragments for selected nav drawer items
 	public void displayView(int position) {
@@ -175,24 +174,11 @@ public class MainActivity extends Activity {
 			fragment = new SearchFragment();
 			break;
 		case 1:
-//			if (displayViewNumber == 0){
-//			
-//				displayViewNumber =1;
-//				Log.d("displayView==0", ""+ displayViewNumber);
-//				Intent i = new Intent(getApplicationContext(), MainActivity.class);
-//				startActivity(i);
-//				break;}
-//			if (displayViewNumber ==1){
-				fragment = new MapLocationFragment();
-//				displayViewNumber= 0;
-//				Log.d("displayView==1", " build map fragment");
-//				break;}
-				break;
-			case 2:
-//			Intent i = new Intent (getApplicationContext(), FavoriteFragment.class);
-//			startActivity(i);
+			fragment = new MapLocationFragment();
+			break;
+		case 2:
 			fragment = new FavoriteFragment();
-			 break;
+			break;
 		default:
 			break;
 		}
@@ -218,7 +204,8 @@ public class MainActivity extends Activity {
 		getActionBar().setTitle(mTitle);
 	}
 
-//	  using  ActionBarDrawerToggle,  call it during onPostCreate() and onConfigurationChanged()...
+	// using ActionBarDrawerToggle, call it during onPostCreate() and
+	// onConfigurationChanged()...
 
 	@Override
 	protected void onPostCreate(Bundle savedInstanceState) {

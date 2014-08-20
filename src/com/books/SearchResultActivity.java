@@ -9,6 +9,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.books.adapter.Adapter;
 import com.books.adapter.ExtendedSimpleAdapter;
 import com.books.R;
 

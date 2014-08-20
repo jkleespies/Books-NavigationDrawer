@@ -1,6 +1,6 @@
 // Adapter handle IO HTTP request
 
-package com.books;
+package com.books.adapter;
 
 //	import bib 
 import java.io.IOException;
