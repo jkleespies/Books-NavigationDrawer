@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Books</string>
+
+    <string-array name="navigation_drawer_array">
+        <item>Search</item>
+        <item>Next Library</item>
+        <item>Favorites</item>
+    </string-array>
+
+    <array name="navigation_drawer_icons">
+        <item>@drawable/action_search</item>
+        <item>@drawable/location_map</item>
+        <item>@drawable/rating_important</item>
+    </array>
+
+    <string name="searchKeyword">search keyword</string>
+    <string name="searchPhrase">Search: </string>
+    <string name="SearchResultActivity_emptyValue">Empty</string>
+    <string name="picture">Image</string>
+    <string name="title">Title</string>
+    <string name="author">Author</string>
+    <string name="isbn">isbn</string>
+    <string name="description">description</string>
+
+    <!-- Search Fragment -->
+    <string name="wait">Please wait</string>
+    <string name="no_description_available">Sorry, there is no description available.</string>
+    <string name="ServiceNotAvailable">Sorry, request is not available.</string>
+
+    <!-- Favorite Fragment -->
+    <string name="FavoriteActivity_NoFavoriteExist">Currently no favorites available.</string>
+    <string name="FavoriteActivity_Favoriten">Your favorites:</string>
+    <string name="title_activity_start">Home</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_example">Example action</string>
+    <string name="action_settings">Settings</string>
+    <string name="list_item_icon">Item Icon</string>
+    <string name="title_activity_search_result">Searchresult</string>
+    <string name="title_activity_search_result_detail">Detail view </string>
+    <string name="title_activity_favorite_detail">FavoriteDetailActivity</string>
+    <string name="hello_world">Hello world!</string>
+
+</resources>

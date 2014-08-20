@@ -1,0 +1,71 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.books.FavoriteFragment"
+    tools:ignore="MergeRootFrame" 
+    android:background="@drawable/background_image">
+
+    <!-- vllt muss in der listview android:list genutzt werden -->
+
+    <TextView
+        android:id="@+id/FavoriteActivity_Favoriten"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="21dp"
+        android:text="@string/FavoriteActivity_Favoriten"
+        android:textSize="22sp" />
+
+    <ListView
+        android:id="@+id/android:list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:dividerHeight="1dp"
+       	android:listSelector="@drawable/list_selector"
+        android:layout_below="@+id/FavoriteActivity_Favoriten" >
+    </ListView>
+
+    <RelativeLayout
+        android:id="@id/android:empty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/FavoriteActivity_Favoriten" >
+
+        <TextView
+            android:id="@+id/FavoriteActivity_NoFavoriteExist"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="24dp"
+            android:text="@string/FavoriteActivity_NoFavoriteExist" />
+
+        <ImageButton
+            android:id="@+id/StartActivity_Suche"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_alignLeft="@+id/FavoriteActivity_NoFavoriteExist"
+            android:layout_below="@+id/FavoriteActivity_NoFavoriteExist"
+            android:layout_marginTop="40dp"
+            android:gravity="top|bottom|left|center_vertical|center_horizontal"
+            android:height="48dip"
+            android:minHeight="24dip"
+            android:src="@drawable/search" />
+
+        <ImageButton
+            android:id="@+id/StartActivity_Buecherei"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_alignLeft="@+id/StartActivity_Suche"
+            android:layout_below="@+id/StartActivity_Suche"
+            android:layout_marginTop="40dp"
+            android:gravity="top|bottom|left|center_vertical|center_horizontal"
+            android:height="48dip"
+            android:minHeight="24dip"
+            android:src="@drawable/location_library" />
+    </RelativeLayout>
+
+</RelativeLayout>

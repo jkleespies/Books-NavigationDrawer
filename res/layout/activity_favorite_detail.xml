@@ -1,0 +1,85 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_image"
+    android:orientation="vertical"
+    tools:context="com.example.books.FavoriteDetailActivity"
+    tools:ignore="MergeRootFrame" >
+
+    <ImageView
+        android:id="@+id/FavoriteDetailActivity_image"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:contentDescription="@string/picture" />
+
+    <ImageButton
+        android:id="@+id/FavoriteDetailActivity_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="24dp"
+        android:layout_marginTop="10dp"
+        android:contentDescription="@string/picture"
+        android:src="@android:drawable/ic_menu_delete" />
+
+    <TextView
+        android:id="@+id/FavoriteDetailActivity_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="80dp"
+        android:text="@string/title"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/FavoriteDetailActivity_author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/FavoriteDetailActivity_title"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/author"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/FavoriteDetailActivity_isbn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/FavoriteDetailActivity_author"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/isbn" />
+
+    <TextView
+        android:id="@+id/FavoriteDetailActivity_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/FavoriteDetailActivity_library"
+        android:layout_alignLeft="@+id/FavoriteDetailActivity_image"
+        android:layout_alignRight="@+id/FavoriteDetailActivity_library"
+        android:layout_below="@id/FavoriteDetailActivity_isbn"
+        android:layout_marginTop="15dp"
+        android:maxLines="100"
+        android:scrollbars="vertical"
+        android:text="@string/description" />
+
+    <ImageButton
+        android:id="@+id/FavoriteDetailActivity_library"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/FavoriteDetailActivity_delete"
+        android:layout_marginBottom="20dp"
+        android:gravity="top|bottom|left|center_vertical|center_horizontal"
+        android:src="@drawable/location_map" />
+
+</RelativeLayout>
