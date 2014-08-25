@@ -87,7 +87,9 @@ public class SearchResultActivity extends ListActivity {
 
 			// create SearchString, replace [] by whitespace (%20)
 			String searchurl = "https://www.googleapis.com/books/v1/volumes?q="
-					+ searchPhrase;
+					+ searchPhrase
+					+ "&key=AIzaSyDjL9mTvbGiaHH8BxUDflfpOUJG6Cu2uVE&fields=kind,totalItems,items(volumeInfo(title,authors,description,imageLinks,industryIdentifiers))&maxResults=40";
+
 			url = searchurl.replaceAll("[ ]", "%20");
 
 			// set Click Listerner on ListViewItem -> start next Activity
@@ -97,20 +99,16 @@ public class SearchResultActivity extends ListActivity {
 				public void onItemClick(AdapterView<?> parent, View view,
 						int position, long id) {
 					// get values from ListView
-					String authors = ((TextView) view
-							.findViewById(R.id.author))
+					String authors = ((TextView) view.findViewById(R.id.author))
 							.getText().toString();
-					String title = ((TextView) view
-							.findViewById(R.id.title))
+					String title = ((TextView) view.findViewById(R.id.title))
 							.getText().toString();
 					String description = ((TextView) view
-							.findViewById(R.id.description))
-							.getText().toString();
+							.findViewById(R.id.description)).getText()
+							.toString();
 					String identifier = ((TextView) view
-							.findViewById(R.id.isbn))
-							.getText().toString();
-					ImageView image = (ImageView) view
-							.findViewById(R.id.image);
+							.findViewById(R.id.isbn)).getText().toString();
+					ImageView image = (ImageView) view.findViewById(R.id.image);
 					// save image
 					image.buildDrawingCache();
 					// initialize Bitmap
@@ -138,6 +136,8 @@ public class SearchResultActivity extends ListActivity {
 	 **/
 	private class GetBooks extends AsyncTask<Void, Void, Void> {
 
+		Integer count = 0;
+		
 		// async method before execute
 		@Override
 		protected void onPreExecute() {
@@ -154,19 +154,24 @@ public class SearchResultActivity extends ListActivity {
 		@Override
 		protected Void doInBackground(Void... arg0) {
 			Adapter ad = new Adapter();
-
+			
+			
 			// URL request and response from Adapter
 			String jsonStr = ad.makeServiceCall(url, Adapter.GET);
-
+			
+			
 			if (jsonStr != null) {
 				try {
 					JSONObject jsonObj = new JSONObject(jsonStr);
 
 					// read JSON Array
 					items = jsonObj.getJSONArray(TAG_ITEMS);
-
+//					items = jsonObj.getJSONArray(TAG_VOLUMEINFO);
+					
+					
+					Log.d("Async Task", "" +  jsonObj);
 					// get book items from JSONObject
-					for (int i = 0; i < 50; i++) {
+					for (int i = 0; i < 39; i++) {
 						JSONObject it = items.getJSONObject(i);
 
 						// volumeInfo conatins content from i item
@@ -221,7 +226,8 @@ public class SearchResultActivity extends ListActivity {
 
 						// initialize hasmap for handling bookitems
 						HashMap<String, Object> item = new HashMap<String, Object>();
-
+						
+						count ++; 
 						// add bookitems to hashmap
 						item.put(TAG_AUTHORS, authors);
 						item.put(TAG_TITLE, title);
@@ -231,7 +237,7 @@ public class SearchResultActivity extends ListActivity {
 
 						// add book item to bookList
 						bookList.add(item);
-					}
+					} //endfor
 				} catch (JSONException e) {
 					e.printStackTrace();
 				}
@@ -252,17 +258,13 @@ public class SearchResultActivity extends ListActivity {
 				pDialog.dismiss();
 
 			/*** Updaten der JSON Daten in die ListView */
-
+			Log.d("Async Task count", "" + count);
 			ListAdapter adapter = new ExtendedSimpleAdapter(
-					SearchResultActivity.this, bookList,
-					R.layout.listitem, new String[] {
-							TAG_AUTHORS, TAG_TITLE, TAG_DESCRIPTION,
+					SearchResultActivity.this, bookList, R.layout.listitem,
+					new String[] { TAG_AUTHORS, TAG_TITLE, TAG_DESCRIPTION,
 							TAG_IDENTIFIER, TAG_THUMBNAIL }, new int[] {
-							R.id.author,
-							R.id.title,
-							R.id.description,
-							R.id.isbn,
-							R.id.image });
+							R.id.author, R.id.title, R.id.description,
+							R.id.isbn, R.id.image });
 			setListAdapter(adapter);
 		}
 
@@ -286,6 +288,7 @@ public class SearchResultActivity extends ListActivity {
 			return bitmap;
 		}
 	}
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.

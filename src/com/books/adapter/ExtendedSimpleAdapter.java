@@ -6,6 +6,7 @@ import java.util.List;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -59,8 +60,9 @@ public class ExtendedSimpleAdapter extends SimpleAdapter{
 	     HashMap<String, Object> dataSet = map.get(position);
 	    
 	    final ViewBinder binder = super.getViewBinder();
+	    
 	    final int count = to.length;
-
+	    Log.d("bindView" ,""+ count);
 	    for (int i = 0; i < count; i++) {
 	        final View v = view.findViewById(to[i]);
 	        if (v != null) {

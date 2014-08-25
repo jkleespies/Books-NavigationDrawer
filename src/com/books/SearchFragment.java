@@ -56,7 +56,7 @@ public class SearchFragment extends Fragment {
 				String search_phrase = search_keyword.getText().toString();
 				if (search_phrase.compareTo("") == 0) {
 					Toast toast = Toast.makeText(getActivity(),
-							"wronge input", Toast.LENGTH_SHORT);
+							"wrong input", Toast.LENGTH_SHORT);
 					toast.setGravity(
 							Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
 					toast.show();
