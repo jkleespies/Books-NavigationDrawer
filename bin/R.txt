@@ -85,7 +85,8 @@ int id FavoriteDetailActivity_image 0x7f050006
 int id FavoriteDetailActivity_isbn 0x7f05000a
 int id FavoriteDetailActivity_library 0x7f05000c
 int id FavoriteDetailActivity_title 0x7f050008
-int id SearchResultActivity_Suche 0x7f050010
+int id SearchResultActivity_Search 0x7f050010
+int id SearchResultActivity_SearchPhrase 0x7f050011
 int id SearchResultDetailActivity_add 0x7f050017
 int id SearchResultDetailActivity_author 0x7f050013
 int id SearchResultDetailActivity_description 0x7f050018
@@ -112,7 +113,6 @@ int id satellite 0x7f050002
 int id searchActivity_input_field 0x7f050022
 int id searchActivity_scanner 0x7f050021
 int id searchActivity_search 0x7f050020
-int id suche 0x7f050011
 int id terrain 0x7f050003
 int id the_map 0x7f05001f
 int id thumbnail 0x7f050023

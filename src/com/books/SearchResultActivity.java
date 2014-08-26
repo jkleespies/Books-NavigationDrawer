@@ -71,10 +71,10 @@ public class SearchResultActivity extends ListActivity {
 
 		// if SearchPhrase empty
 		if (searchPhrase.equals("")) {
-			TextView tv = (TextView) findViewById(R.id.SearchResultActivity_Suche);
+			TextView tv = (TextView) findViewById(R.id.SearchResultActivity_Search);
 			tv.setText(getString(R.string.SearchResultActivity_emptyValue));
 		} else {
-			TextView tv = (TextView) findViewById(R.id.SearchResultActivity_Suche);
+			TextView tv = (TextView) findViewById(R.id.SearchResultActivity_Search);
 			// underline Searchphrase
 			SpannableString content = new SpannableString(searchPhrase);
 			content.setSpan(new UnderlineSpan(), 0, content.length(), 0);

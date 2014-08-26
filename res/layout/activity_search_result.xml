@@ -8,30 +8,30 @@
 
     <!-- Suche EditText und Suchergebnisliste ListView -->
     <TextView
-        android:id="@+id/SearchResultActivity_Suche"
+        android:id="@+id/SearchResultActivity_Search"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp"
         android:textSize="15sp"
-        android:layout_toRightOf="@+id/suche"/>
+        android:layout_toRightOf="@+id/SearchResultActivity_SearchPhrase"/>
     
     
     <ListView
         android:id="@android:id/list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/SearchResultActivity_Suche"
+        android:layout_below="@id/SearchResultActivity_Search"
         android:divider="#b5b5b5"
         android:dividerHeight="1dp"
         android:listSelector="@drawable/list_selector" >
     </ListView>
 
     <TextView
-        android:id="@+id/suche"
+        android:id="@+id/SearchResultActivity_SearchPhrase"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/SearchResultActivity_Suche"
+        android:layout_alignBottom="@+id/SearchResultActivity_Search"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="5dp"
         android:text="@string/searchPhrase" />
