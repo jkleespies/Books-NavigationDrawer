@@ -102,7 +102,7 @@ public class SearchResultDetailActivity extends Activity {
 			public void onClick(View v) {
 				Log.d("hinzufügen", "werte werden in db eingefügt");
 
-				// save image in File "imageDir"
+				// open file
 				ContextWrapper cw = new ContextWrapper(getApplicationContext());
 				// file name = "booksImageDir"
 				File directory = cw.getDir("booksImageDir",

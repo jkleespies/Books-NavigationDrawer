@@ -1,6 +1,5 @@
 package com.books.adapter;
 
-import com.books.FavoriteFragment;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -40,3 +39,4 @@ public class DatenbankManager extends SQLiteOpenHelper {
 	}
 
 }
+

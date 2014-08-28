@@ -53,7 +53,8 @@
             android:gravity="top|bottom|left|center_vertical|center_horizontal"
             android:height="48dip"
             android:minHeight="24dip"
-            android:src="@drawable/search" />
+            android:src="@drawable/search" 
+            android:contentDescription="@string/picture"/>
 
         <ImageButton
             android:id="@+id/StartActivity_Buecherei"
@@ -65,7 +66,8 @@
             android:gravity="top|bottom|left|center_vertical|center_horizontal"
             android:height="48dip"
             android:minHeight="24dip"
-            android:src="@drawable/location_library" />
+            android:src="@drawable/location_library"
+            android:contentDescription="@string/picture" />
     </RelativeLayout>
 
 </RelativeLayout>

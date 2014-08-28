@@ -55,7 +55,8 @@
         android:layout_marginBottom="20dp"
         android:layout_marginRight="24dp"
         android:src="@drawable/location_map"
-        android:textSize="15sp" />
+        android:textSize="15sp" 
+        android:contentDescription="@string/picture"/>
 
     <ImageButton
         android:id="@+id/SearchResultDetailActivity_add"
