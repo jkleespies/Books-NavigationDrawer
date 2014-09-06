@@ -171,7 +171,7 @@ public class SearchResultActivity extends ListActivity {
 					
 					Log.d("Async Task", "" +  jsonObj);
 					// get book items from JSONObject
-					for (int i = 0; i < 39; i++) {
+					for (int i = 0; i < 40; i++) {
 						JSONObject it = items.getJSONObject(i);
 
 						// volumeInfo conatins content from i item
