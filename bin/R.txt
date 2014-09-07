@@ -96,7 +96,6 @@ int id SearchResultDetailActivity_picture 0x7f050012
 int id SearchResultDetailActivity_title 0x7f050014
 int id StartActivity_Buecherei 0x7f05001e
 int id StartActivity_Suche 0x7f05001d
-int id action_settings 0x7f050028
 int id author 0x7f050025
 int id container 0x7f050005
 int id description 0x7f050026
@@ -127,10 +126,6 @@ int layout fragment_favorite 0x7f030005
 int layout fragment_map 0x7f030006
 int layout fragment_search 0x7f030007
 int layout listitem 0x7f030008
-int menu favorite_detail 0x7f0b0000
-int menu main 0x7f0b0001
-int menu search_result 0x7f0b0002
-int menu search_result_detail 0x7f0b0003
 int string FavoriteActivity_Favoriten 0x7f060028
 int string FavoriteActivity_NoFavoriteExist 0x7f060027
 int string SearchResultActivity_emptyValue 0x7f06001e

@@ -69,6 +69,9 @@ public class Adapter {
 				}
 
 				HttpGet httpGet = new HttpGet(url);
+//				messure data - only get request to response 
+//				filename: get_request_search
+				android.os.Debug.startMethodTracing("get_request_search");
 				httpResponse = httpClient.execute(httpGet);
 			}
 
@@ -84,7 +87,9 @@ public class Adapter {
 			e.printStackTrace();
 		}
 
-		//	return Http Link 
+//		end messure data - only get request to response
+		android.os.Debug.stopMethodTracing();
+		//	return Http Link
 		return response;
 	}
 	

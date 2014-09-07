@@ -40,7 +40,8 @@ public class SearchFragment extends Fragment {
 
 			@Override
 			public void onClick(View v) {
-
+//				data messure camera
+				android.os.Debug.startMethodTracing("camera");
 				Intent intent = new Intent(getActivity(),
 						ZBarScannerActivity.class);
 				startActivityForResult(intent, 0);

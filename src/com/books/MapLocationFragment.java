@@ -163,6 +163,8 @@ public class MapLocationFragment extends Fragment implements LocationListener {
 				.target(lastLatLng).zoom(16).bearing(0).tilt(45).build();
 		this.theMap.moveCamera(CameraUpdateFactory
 				.newCameraPosition(cameraPosition));
+		
+//		end messure datea - showing map 
 
 		// define search parameters for places -> type
 		String types = "book_store|library";
@@ -240,6 +242,8 @@ public class MapLocationFragment extends Fragment implements LocationListener {
 								placeMarkers[pm].remove();
 						}
 					}
+					
+//					messure data - loading book places
 					// parse JSON
 					try {
 
@@ -250,6 +254,8 @@ public class MapLocationFragment extends Fragment implements LocationListener {
 						// marker options for each place returned
 						places = new MarkerOptions[placesArray.length()];
 						// loop through places
+						
+						
 						for (int p = 0; p < placesArray.length(); p++) {
 							// parse each place
 							// if any values are missing we won't show the marker
@@ -316,7 +322,8 @@ public class MapLocationFragment extends Fragment implements LocationListener {
 								placeMarkers[p] = theMap.addMarker(places[p]);
 						}
 					}
-
+						
+//				end	messure data - loading book places
 				}
 			}
 	}
