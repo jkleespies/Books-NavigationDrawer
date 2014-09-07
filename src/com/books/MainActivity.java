@@ -99,11 +99,13 @@ public class MainActivity extends Activity {
 		) {
 			public void onDrawerClosed(View view) {
 				getActionBar().setTitle(Title);
+				// calling onPrepareOptionsMenu() to show action bar icons
 				invalidateOptionsMenu();
 			}
 
 			public void onDrawerOpened(View drawerView) {
 				getActionBar().setTitle(DrawerTitle);
+				// calling onPrepareOptionsMenu() to hide action bar icons
 				invalidateOptionsMenu();
 			}
 		};
@@ -128,6 +130,26 @@ public class MainActivity extends Activity {
 		}
 	}
 
+
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// toggle nav drawer on selecting action bar app icon/title
+		// Drawer
+		if (DrawerToggle.onOptionsItemSelected(item)) {
+
+			return true;
+		}
+			return super.onOptionsItemSelected(item);
+	}
+
+	// // Called when invalidateOptionsMenu() is used
+	@Override
+	public boolean onPrepareOptionsMenu(Menu menu) {
+		// if nav drawer is opened, hide the action items
+
+		return super.onPrepareOptionsMenu(menu);
+	}
 
 	// displaying different fragments for selected nav drawer items
 	public void displayView(int position) {
